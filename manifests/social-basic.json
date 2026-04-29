@@ -1,0 +1,27 @@
+{
+  "id": "social-basic",
+  "name": "Social Platform Basic Profile",
+  "name_zh": "社交平台基本资料",
+  "version": "1.0.0",
+  "description": "Anonymous social platform onboarding. No real name, no contact info — just the user's TDEN DID, nickname, and reputation score. Demonstrates the privacy-preserving default: the platform never learns who you are off-platform.",
+  "description_zh": "匿名社交平台开户配方。无真实姓名、无联系方式 — 只取 TDEN DID、昵称、声誉分。展示了隐私保护默认:平台永远不知道你在平台外是谁。",
+  "category": "social",
+  "fields": [
+    { "tag": "did",              "required": true,  "justification": "Stable anonymous identifier — the platform's user_id maps to this.", "justification_zh": "稳定匿名标识 — 平台的用户 ID 映射到这个。" },
+    { "tag": "nickname",         "required": true,  "justification": "Display name shown to other users.", "justification_zh": "向其他用户显示的昵称。" },
+    { "tag": "reputation_score", "required": true,  "justification": "Public reputation score (0-5) used for trust signals + sybil resistance.", "justification_zh": "公开声誉分(0-5),用于信任信号 + Sybil 攻击抵抗。" },
+    { "tag": "is_real_name_verified", "required": false, "justification": "Optional badge showing user has completed real-name verification (without revealing the name itself).", "justification_zh": "可选:显示用户已实名(但不暴露名字本身)。" }
+  ],
+  "purpose": "Onboard users to a social platform with privacy-by-default. Users post under a stable pseudonym, the platform applies reputation-based moderation, and no PII ever crosses the trust boundary.",
+  "purpose_zh": "以隐私为默认的社交平台开户。用户用稳定假名发帖,平台应用声誉制审核,任何 PII 都不跨越信任边界。",
+  "lawful_basis": "consent",
+  "auth_types": ["permanent"],
+  "max_validity_seconds": 0,
+  "max_queries_per_day": 5000,
+  "compliance": ["gdpr"],
+  "author": "TDEN team",
+  "author_url": "https://github.com/sunbird84/tden-skills",
+  "submitted_at": "2026-04-30",
+  "approved_at": "2026-04-30",
+  "license": "CC0-1.0"
+}

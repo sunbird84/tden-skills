@@ -1,0 +1,25 @@
+{
+  "id": "age-gate-18",
+  "name": "Age Gate (18+)",
+  "name_zh": "成人内容年龄门禁",
+  "version": "1.0.0",
+  "description": "Minimal-disclosure age verification for adult content / gambling / age-restricted services. Proves age ≥ 18 without revealing the actual birthday — uses TDEN's selective-disclosure VC capability when available, falls back to dob field with truncation to year-only.",
+  "description_zh": "最小披露的年龄验证,用于成人内容 / 博彩 / 年龄限制服务。证明 ≥ 18 而不透露真实生日 — 优先用 TDEN 选择性披露 VC,降级到只取年份。",
+  "category": "age-verification",
+  "fields": [
+    { "tag": "dob", "required": true, "justification": "Required to verify age ≥ 18. Phase B will switch to selective disclosure (proof of age range) without exposing the actual date.", "justification_zh": "用于验证年龄 ≥ 18。Phase B 将切换为选择性披露(只证明年龄范围,不暴露具体日期)。" },
+    { "tag": "is_real_name_verified", "required": false, "justification": "Optional: only show is_real_name_verified=true users to reduce fraudulent age claims.", "justification_zh": "可选:只让已实名用户通过,降低虚假年龄索赔。" }
+  ],
+  "purpose": "Block under-18 users from accessing age-restricted content while collecting the absolute minimum personal data. Most jurisdictions require some age check for adult content; TDEN's selective-disclosure path means we never see the user's actual birthday once Phase B ZK is wired.",
+  "purpose_zh": "在收集最少个人数据的前提下阻止未满 18 岁用户访问年龄限制内容。大多数辖区都要求年龄检查;TDEN 选择性披露路径(Phase B ZK 后)意味着我们永远不会看到用户的真实生日。",
+  "lawful_basis": "legal-obligation",
+  "auth_types": ["permanent"],
+  "max_validity_seconds": 0,
+  "max_queries_per_day": 10000,
+  "compliance": ["coppa", "gdpr"],
+  "author": "TDEN team",
+  "author_url": "https://github.com/sunbird84/tden-skills",
+  "submitted_at": "2026-04-30",
+  "approved_at": "2026-04-30",
+  "license": "CC0-1.0"
+}

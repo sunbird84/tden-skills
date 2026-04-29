@@ -1,0 +1,27 @@
+{
+  "id": "ecommerce-shipping",
+  "name": "E-commerce Shipping",
+  "name_zh": "电商收货信息",
+  "version": "1.0.0",
+  "description": "Standard e-commerce checkout: capture delivery name, phone, and shipping address. Designed to replace the per-site repeated form entry — TDEN holds these once, RPs receive via short-term consent valid only for the order fulfillment window.",
+  "description_zh": "标准电商结账:收件人姓名、电话、收货地址。用于替代各家网站重复的表单填写 — TDEN 集中保存,RP 仅在订单履约窗口内通过短期授权获得。",
+  "category": "ecommerce",
+  "fields": [
+    { "tag": "real_name",     "required": true,  "justification": "Recipient name for delivery courier.", "justification_zh": "收件人姓名,用于快递员送达。" },
+    { "tag": "phone",         "required": true,  "justification": "Required by most courier services for delivery coordination.", "justification_zh": "大多数快递公司送达协调所需。" },
+    { "tag": "address_full",  "required": true,  "justification": "Full delivery address.", "justification_zh": "完整收货地址。" },
+    { "tag": "email",         "required": false, "justification": "Optional: order confirmation + tracking link.", "justification_zh": "可选:订单确认 + 物流追踪链接。" }
+  ],
+  "purpose": "Create a shipping order on the merchant's behalf. Data is used solely for fulfilling the specific order and is automatically purged 90 days after delivery confirmation unless extended for warranty / returns by separate consent.",
+  "purpose_zh": "代表商户创建发货订单。数据仅用于履约该笔订单,送达后 90 天自动清除,除非用户单独同意延长(用于保修/退换)。",
+  "lawful_basis": "contract",
+  "auth_types": ["short-term"],
+  "max_validity_seconds": 7776000,
+  "max_queries_per_day": 100,
+  "compliance": ["gdpr", "pipl-china"],
+  "author": "TDEN team",
+  "author_url": "https://github.com/sunbird84/tden-skills",
+  "submitted_at": "2026-04-30",
+  "approved_at": "2026-04-30",
+  "license": "CC0-1.0"
+}

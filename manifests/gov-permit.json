@@ -1,0 +1,28 @@
+{
+  "id": "gov-permit",
+  "name": "Government Permit Application",
+  "name_zh": "政务事项申请",
+  "version": "1.0.0",
+  "description": "Standard set for online government permit applications: real-name verification + ID + permanent address. Optimised for Chinese 政务服务 portals; the same fields work for most countries' citizen services.",
+  "description_zh": "标准的政务事项在线申请配方:实名验证 + 身份证 + 户籍地址。针对中国政务服务门户优化;同样字段适用于大多数国家的公民服务。",
+  "category": "gov",
+  "fields": [
+    { "tag": "real_name",             "required": true, "justification": "Legal name on file with government records.", "justification_zh": "政府档案中的法定姓名。" },
+    { "tag": "id_card_number",        "required": true, "justification": "National ID number for record matching.", "justification_zh": "国民身份证号,用于档案匹配。" },
+    { "tag": "address_full",          "required": true, "justification": "Permanent address (户籍地 in China).", "justification_zh": "永久地址(中国户籍地)。" },
+    { "tag": "is_real_name_verified", "required": true, "justification": "Confirms CTID / equivalent real-name verification has been completed on TDEN.", "justification_zh": "确认在 TDEN 上已完成 CTID 或等同实名验证。" },
+    { "tag": "phone",                 "required": false, "justification": "Optional: SMS notification for permit status updates.", "justification_zh": "可选:许可状态变更短信通知。" }
+  ],
+  "purpose": "Government permit / license / certificate applications. Replaces paper-form submission with TDEN-verified attribute disclosure. Government agency receives signed VCs they can verify against TDEN's chain — no need to re-verify the same documents at every agency.",
+  "purpose_zh": "政府许可 / 执照 / 证书申请。用 TDEN 验证的属性披露替代纸质表单。政府机构收到可在 TDEN 链上验证的签名 VC — 不需要在每个机构重新验证同样的证件。",
+  "lawful_basis": "public-task",
+  "auth_types": ["short-term", "long-term"],
+  "max_validity_seconds": 7776000,
+  "max_queries_per_day": 100,
+  "compliance": ["pipl-china", "gdpr"],
+  "author": "TDEN team",
+  "author_url": "https://github.com/sunbird84/tden-skills",
+  "submitted_at": "2026-04-30",
+  "approved_at": "2026-04-30",
+  "license": "CC0-1.0"
+}

@@ -1,0 +1,29 @@
+{
+  "id": "kyc-crypto-exchange",
+  "name": "Crypto Exchange KYC",
+  "name_zh": "加密交易所 KYC",
+  "version": "1.0.0",
+  "description": "FATF Travel Rule compliant KYC for crypto exchanges. Captures legal name, government ID, date of birth, and full address — the minimal set required to meet most jurisdictions' anti-money-laundering reporting thresholds.",
+  "description_zh": "符合 FATF Travel Rule 的加密交易所 KYC 配方。采集法定姓名、身份证号、出生日期与完整地址 — 大多数司法辖区反洗钱报告阈值所需的最小集合。",
+  "category": "kyc",
+  "fields": [
+    { "tag": "real_name",          "required": true,  "justification": "Legal name required by FATF Travel Rule for transactions ≥ USD 1000 equivalent.", "justification_zh": "FATF Travel Rule 要求,等值 USD 1000 以上交易需提供法定姓名。" },
+    { "tag": "id_card_number",     "required": true,  "justification": "Government-issued ID number for sanctions screening.", "justification_zh": "国家颁发的身份证号,用于制裁名单筛查。" },
+    { "tag": "dob",                "required": true,  "justification": "Date of birth for age verification (must be ≥ 18) and identity matching.", "justification_zh": "出生日期用于年龄验证(必须 ≥ 18)及身份匹配。" },
+    { "tag": "address_full",       "required": true,  "justification": "Full residential address for tax reporting and travel-rule recipient identification.", "justification_zh": "完整居住地址,用于税务报告和 travel-rule 收件方识别。" },
+    { "tag": "is_real_name_verified", "required": true,  "justification": "Confirms the user has completed government-backed real-name verification.", "justification_zh": "确认用户已完成政府支持的实名验证。" },
+    { "tag": "phone",              "required": false, "justification": "Optional second-factor + transaction notification channel.", "justification_zh": "可选的第二因子 + 交易通知通道。" }
+  ],
+  "purpose": "Onboarding for a regulated cryptocurrency exchange. Used to satisfy FATF Travel Rule, FinCEN BSA, and equivalent local AML/CTF requirements. Data is retained for the period required by the operating jurisdiction (typically 5-7 years post account closure) and is subject to law enforcement disclosure on valid legal request only.",
+  "purpose_zh": "持牌加密货币交易所开户。用于满足 FATF Travel Rule、FinCEN BSA 及当地等价反洗钱/反恐融资要求。数据保留期为运营辖区要求(通常账户关闭后 5-7 年),仅在有效法律要求下向执法披露。",
+  "lawful_basis": "legal-obligation",
+  "auth_types": ["permanent"],
+  "max_validity_seconds": 0,
+  "max_queries_per_day": 50,
+  "compliance": ["fatf-travel-rule", "gdpr", "pipl-china"],
+  "author": "TDEN team",
+  "author_url": "https://github.com/sunbird84/tden-skills",
+  "submitted_at": "2026-04-30",
+  "approved_at": "2026-04-30",
+  "license": "CC0-1.0"
+}
