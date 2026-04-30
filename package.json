@@ -1,0 +1,15 @@
+{
+  "name": "tden-skills",
+  "version": "1.0.0",
+  "private": true,
+  "description": "TDEN scene-package recipes (Skills) — community-curated.",
+  "type": "module",
+  "scripts": {
+    "validate": "node scripts/validate.mjs"
+  },
+  "devDependencies": {
+    "ajv": "^8.20.0",
+    "ajv-formats": "^3.0.1"
+  },
+  "license": "CC0-1.0"
+}

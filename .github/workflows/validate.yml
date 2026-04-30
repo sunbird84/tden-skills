@@ -1,0 +1,23 @@
+# tden-skills CI — JSON Schema validation on every push.
+# 防止有人 PR 一份不符合 schema 的 manifest 进 main(本来一直靠肉眼审,Phase A2.7+ 上自动)。
+name: validate
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+
+jobs:
+  schema:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: install ajv
+        run: npm install --no-save ajv@^8 ajv-formats@^3
+
+      - name: validate manifests
+        run: node scripts/validate.mjs
